@@ -5,7 +5,17 @@ learn-reading-notes
 `The BeeWare Project`_. **If you want to see more tools like Briefcase, please
 consider** `becoming a financial member of BeeWare`_.
 
-Learn Reading Notes!
+"Learn Reading Notes" is a simple, small App created to learn the names of music notes in Violin and Bass key.
+The naming is german, because for some reason the english 'B' is called 'H' in german and the english 'Bes' is called 'B'.
+
+the naming can be changed at the bottom of "app.py". The lines are marked with "# HERE".
+
+# build project
+install dependencies: `pip install briefcase`
+
+build a test desktop project: `briefcase dev`
+build the android project: `briefcase update android`
+run the android project: `briefcase run android`
 
 .. _`Briefcase`: https://github.com/beeware/briefcase
 .. _`The BeeWare Project`: https://beeware.org/

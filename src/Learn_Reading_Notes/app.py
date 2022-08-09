@@ -92,16 +92,14 @@ class learnreadingnotes(toga.App):
             self.__new_img()
             self.lbl_res.text = ""
             self.txt_input.value = ""
+        elif self.txt_input.value.lower() == self.result[0].lower():
+            self.__new_img()
+            self.lbl_res.text = "RIGHT"
+            self.txt_input.value = ""
+            status = self.lbl_status.text.split("/")
+            self.lbl_status.text = f"{int(status[0]) + 1}/{int(status[1]) + 1}"
         else:
-            for res in self.result[0]:
-                if self.txt_input.value.lower() == res.lower():
-                    self.__new_img()
-                    self.lbl_res.text = "right"
-                    self.txt_input.value = ""
-                    status = self.lbl_status.text.split("/")
-                    self.lbl_status.text = f"{int(status[0]) + 1}/{int(status[1]) + 1}"
-                    return
-            self.lbl_res.text = f"wrong: {'/'.join(self.result[0])}"
+            self.lbl_res.text = f"WRONG: it would have been: {self.result[0]}"
             self.btn_see_res.label = "next"
             status = self.lbl_status.text.split("/")
             self.lbl_status.text = f"{status[0]}/{int(status[1]) + 1}"
@@ -112,58 +110,64 @@ def main():
 
 
 ARR_IMG = [
-    [["a"], "a"],
-    [["a"], "a0"],
-    [["ais"], "ais"],
-    [["ais"], "ais0"],
-    [["as"], "as"],
-    [["as"], "as0"],
-    [["b", "hes"], "b"],
-    [["b", "hes"], "b0"],
-    [["b", "hes"], "b2"],
-    [["c"], "c"],
-    [["c"], "c2"],
-    [["c"], "c3"],
-    [["ces"], "ces"],
-    [["ces"], "ces2"],
-    [["ces"], "ces3"],
-    [["cis"], "cis"],
-    [["cis"], "cis2"],
-    [["d"], "d"],
-    [["d"], "d2"],
-    [["d"], "d3"],
-    [["des"], "des"],
-    [["des"], "des"],
-    [["des"], "des2"],
-    [["des"], "des3"],
-    [["dis"], "dis"],
-    [["dis"], "dis2"],
-    [["dis"], "dis3"],
-    [["e"], "e"],
-    [["e"], "e2"],
-    [["eis"], "eis"],
-    [["eis"], "eis2"],
-    [["es"], "es"],
-    [["es"], "es2"],
-    [["f"], "f"],
-    [["f"], "f2"],
-    [["fes"], "fes"],
-    [["fes"], "fes2"],
-    [["fis"], "fis"],
-    [["fis"], "fis2"],
-    [["g"], "g"],
-    [["g"], "g0"],
-    [["g"], "g2"],
-    [["ges"], "ges"],
-    [["ges"], "ges0"],
-    [["ges"], "ges2"],
-    [["gis"], "gis"],
-    [["gis"], "gis0"],
-    [["gis"], "gis2"],
-    [["h"], "h"],
-    [["h"], "h0"],
-    [["h"], "h2"],
-    [["his"], "his"],
-    [["his"], "his0"],
-    [["his"], "his2"]
+    ["a", "a"],
+    ["a", "a0"],
+    ["ais", "ais"],
+    ["ais", "ais0"],
+    ["as", "as"],
+    ["as", "as0"],
+    # ["bes", "b"], # HERE english version
+    # ["bes", "b0"], # HERE english version
+    # ["bes", "b2"], # HERE english version
+    ["b", "b"], # HERE german version
+    ["b", "b0"], # HERE german version
+    ["b", "b2"], # HERE german version
+    ["c", "c"],
+    ["c", "c2"],
+    ["c", "c3"],
+    ["ces", "ces"],
+    ["ces", "ces2"],
+    ["ces", "ces3"],
+    ["cis", "cis"],
+    ["cis", "cis2"],
+    ["d", "d"],
+    ["d", "d2"],
+    ["d", "d3"],
+    ["des", "des"],
+    ["des", "des"],
+    ["des", "des2"],
+    ["des", "des3"],
+    ["dis", "dis"],
+    ["dis", "dis2"],
+    ["dis", "dis3"],
+    ["e", "e"],
+    ["e", "e2"],
+    ["eis", "eis"],
+    ["eis", "eis2"],
+    ["es", "es"],
+    ["es", "es2"],
+    ["f", "f"],
+    ["f", "f2"],
+    ["fes", "fes"],
+    ["fes", "fes2"],
+    ["fis", "fis"],
+    ["fis", "fis2"],
+    ["g", "g"],
+    ["g", "g0"],
+    ["g", "g2"],
+    ["ges", "ges"],
+    ["ges", "ges0"],
+    ["ges", "ges2"],
+    ["gis", "gis"],
+    ["gis", "gis0"],
+    ["gis", "gis2"],
+    # ["b", "h"], # HERE english version
+    # ["b", "h0"], # HERE english version
+    # ["b", "h2"], # HERE english version
+    ["h", "h"], # HERE german version
+    ["h", "h0"], # HERE german version
+    ["h", "h2"], # HERE german version
+    ["his", "his"],
+    ["his", "his0"],
+    ["his", "his2"]
 ]
