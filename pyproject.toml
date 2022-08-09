@@ -1,0 +1,64 @@
+[tool.briefcase]
+project_name = "learn-reading-notes"
+bundle = "com.learnreadingnotes"
+version = "0.0.1"
+url = "https://github.com/jalupaja/Learn-Reading-Notes"
+license = "GNU General Public License v3 (GPLv3)"
+author = 'jalupa'
+author_email = "fake@fake.fake"
+
+[tool.briefcase.app.Learn-Reading-Notes]
+formal_name = "learn-reading-notes"
+description = "Learn Reading Notes!"
+icon = "src/Learn_Reading_Notes/resources/Learn-Reading-Notes"
+sources = ['src/Learn_Reading_Notes']
+requires = [
+]
+
+
+[tool.briefcase.app.Learn-Reading-Notes.macOS]
+requires = [
+    'toga-cocoa>=0.3.0.dev34',
+    'std-nslog~=1.0.0'
+]
+
+[tool.briefcase.app.Learn-Reading-Notes.linux]
+requires = [
+    'toga-gtk>=0.3.0.dev34',
+]
+
+[tool.briefcase.app.Learn-Reading-Notes.linux.appimage]
+system_requires = [
+    'gir1.2-webkit-3.0',
+    'libcairo2-dev',
+    'libgirepository1.0-dev',
+    'libgtk-3-dev',
+    'libpango1.0-dev',
+    'librsvg2-dev',
+    'libwebkitgtk-3.0-0',
+]
+linuxdeploy_plugins = [
+    'DEPLOY_GTK_VERSION=3 gtk',
+]
+
+[tool.briefcase.app.Learn-Reading-Notes.linux.flatpak]
+flatpak_runtime = 'org.gnome.Platform'
+flatpak_runtime_version = '42'
+flatpak_sdk = 'org.gnome.Sdk'
+
+[tool.briefcase.app.Learn-Reading-Notes.windows]
+requires = [
+    'toga-winforms>=0.3.0.dev34',
+]
+
+# Mobile deployments
+[tool.briefcase.app.Learn-Reading-Notes.iOS]
+requires = [
+    'toga-iOS>=0.3.0.dev34',
+    'std-nslog~=1.0.0'
+]
+
+[tool.briefcase.app.Learn-Reading-Notes.android]
+requires = [
+    'toga-android>=0.3.0.dev34'
+]
